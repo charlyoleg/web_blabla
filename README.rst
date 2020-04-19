@@ -1,12 +1,12 @@
-===================
-Notes on Web_blabla
-===================
+====================
+README of Web_blabla
+====================
 
 
 Presentation
 ============
 
-*Web_blabla* is my boiler-plate for web projects.
+*Web_blabla* is my boilerplate for web projects.
 
 It tends to be JAMstack_ compliant, i.e. that most of the code is in the front-end and could be delivered by CDN_. The back-end should be reduced to the minimum, ideally a pure static sever. Real back-end functionalities are delivered via a REST_ API. The front-end should be easily transformed into an electron_ app, NW_ app or PWA_.
 
