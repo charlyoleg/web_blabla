@@ -32,6 +32,8 @@ HTML5_, CSS3_ and ES6_ are targeted even if they might restrict the compatibilit
 .. _HTML5 : https://www.w3.org/TR/html5/
 .. _CSS3 : https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3
 .. _ES6 : http://es6-features.org
+.. _electron : https://www.electronjs.org/
+.. _NW : https://nwjs.io/
 
 
 Requirements
