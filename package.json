@@ -7,6 +7,11 @@
     "doc": "docs"
   },
   "scripts": {
+    "install_py": "PIPENV_VENV_IN_PROJECT=1 pipenv install",
+    "clean_docs": "rm -fr docs/build docs/*.pdf",
+    "build_docs": "pipenv run sphinx-build -b html docs/ docs/build/",
+    "view_docs": "sensible-browser docs/build/index.html",
+    "docs": "run-s clean_docs build_docs view_docs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
