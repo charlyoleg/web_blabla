@@ -1,0 +1,10 @@
+# .gitignore for web_blabla
+*~
+*.swp
+node_modules
+.venv
+frontend/dist/
+backend/dist/
+docs/build/
+swagger.yaml
+*.pdf
