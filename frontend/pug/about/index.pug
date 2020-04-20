@@ -3,13 +3,13 @@ doctype html
 html(lang="fr")
   head
     meta(charset='utf-8')
-    title Web_blabla
+    title Web_blabla About
     meta(name='description', content='My boilerplate for web projects')
     meta(name='author', content='charlyoleg')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    link(rel='stylesheet', href='css/web_blabla_style.css?v=1.0')
+    link(rel='stylesheet', href='/css/web_blabla_style.css?v=1.0')
     link(rel='manifest', href='/manifest.json')
-    link(rel='icon', href='web_blabla_favicon.svg', type='image/svg+xml')
+    link(rel='icon', href='/web_blabla_favicon.svg', type='image/svg+xml')
   body
     // web_blabla's header
     header
@@ -18,13 +18,12 @@ html(lang="fr")
       h2 My boilerplate for web projects
     // web_blabla's main
     main
-      p Voici et voilà
-      a(href='/about.html') about
+      p voila le About
     // Rouleau's footer
-    include includes/web_blabla_footer.pug
+    include ../includes/web_blabla_footer.pug
 
     // The core logic
-    script(type='module', src='js/web_blabla_app.js?v=1.0')
+    script(type='module', src='/js/web_blabla_app.js?v=1.0')
     // The service-worker
     if fingerprint.with_service_worker
       script.
