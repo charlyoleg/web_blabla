@@ -37,6 +37,9 @@
     "swag_be": "swagger-jsdoc -d backend/swaggerDef.js backend/src/web_blabla_app.ts -o backend/swagger.yaml",
     "serve_be": "node backend/dist/web_blabla_app.js",
     "start_be": "run-s clean_be build_be serve_be",
+    "pre_start": "run-s clean_fe build_fe clean_be build_be serve_be",
+    "start_browser": "sensible-browser https://localhost:8443",
+    "start": "run-p pre_start start_browser",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
