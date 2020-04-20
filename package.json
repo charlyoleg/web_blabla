@@ -27,6 +27,16 @@
     "dev_fe": "run-p -l dev_html dev_css dev_fejs build_favicon build_img serve_fe",
     "serve_fe": "live-server frontend/dist",
     "start_fe": "run-s clean_fe build_fe serve_fe",
+    "clean_be": "rm -fr backend/dist",
+    "build_bejs": "tsc -p backend",
+    "dev_bejs": "tsc --watch --project backend",
+    "cpy_be": "cpy backend/keys/*.crt backend/keys/*.key backend/dist/",
+    "build_be": "run-s build_bejs cpy_be",
+    "lint_be": "eslint -c backend/eslint.json -p backend/tsconfig.json --fix",
+    "test_be": "jest --verbose",
+    "swag_be": "swagger-jsdoc -d backend/swaggerDef.js backend/src/web_blabla_app.ts -o backend/swagger.yaml",
+    "serve_be": "cd backend/dist && node web_blabla_app.js",
+    "start_be": "run-s clean_be build_be serve_be",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
