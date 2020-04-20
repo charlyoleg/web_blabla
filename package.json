@@ -22,7 +22,7 @@
     "dev_fejs": "tsc --watch --project frontend/ts",
     "build_favicon": "cpx frontend/favi/**/* frontend/dist/",
     "build_img": "cpx frontend/img/**/* frontend/dist/img",
-    "build_fe":     "run-s build_html     build_css build_fejs build_favicon build_img",
+    "build_fe": "    run-s build_html     build_css build_fejs build_favicon build_img",
     "build_fe_dev": "run-s build_html_dev build_css build_fejs build_favicon build_img",
     "dev_fe": "run-p -l dev_html dev_css dev_fejs build_favicon build_img serve_fe",
     "serve_fe": "live-server frontend/dist",
