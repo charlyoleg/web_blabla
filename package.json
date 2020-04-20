@@ -21,6 +21,7 @@
     "build_fejs": "tsc --project frontend/ts",
     "dev_fejs": "tsc --watch --project frontend/ts",
     "eslint_fe": "eslint frontend/ts/**",
+    "test_fe": "jest --config=frontend/jest.config.js frontend",
     "build_favicon": "cpy frontend/favi/**/* frontend/dist/",
     "build_img": "cpy frontend/img/**/* frontend/dist/img",
     "build_fe": "    run-s build_html     build_css build_fejs build_favicon build_img",
@@ -41,7 +42,7 @@
     "pre_start": "run-s clean_fe build_fe clean_be build_be serve_be",
     "start_browser": "sensible-browser https://localhost:8443",
     "start": "run-p pre_start start_browser",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "run-s test_fe eslint_fe test_be eslint_be"
   },
   "repository": {
     "type": "git",
