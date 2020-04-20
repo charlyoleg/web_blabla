@@ -22,7 +22,7 @@ const ssl_options = {
     cert: fs.readFileSync( path.join(__dirname, './web_blabla_server.crt') )
 };
 
-const app_http_port = 8442;
+//const app_http_port = 8442;
 const app_https_port = 8443;
 
 const frontend_dist_dir = path.join(__dirname, '../../frontend/dist/');
