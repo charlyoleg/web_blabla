@@ -34,7 +34,7 @@
     "cpy_be": "cpy backend/keys/*.crt backend/keys/*.key backend/dist/",
     "build_be": "run-s build_bejs cpy_be",
     "eslint_be": "eslint backend/src/**",
-    "test_be": "jest --verbose",
+    "test_be": "jest --config=backend/jest.config.js backend",
     "swag_be": "swagger-jsdoc -d backend/swaggerDef.js backend/src/web_blabla_app.ts -o backend/swagger.yaml",
     "serve_be": "node backend/dist/web_blabla_app.js",
     "start_be": "run-s clean_be build_be serve_be",
@@ -68,6 +68,7 @@
     "pug-cli": "^1.0.0-alpha6",
     "sass": "^1.26.3",
     "swagger-jsdoc": "^4.0.0",
+    "ts-jest": "^25.4.0",
     "typescript": "^3.8.3"
   },
   "dependencies": {
