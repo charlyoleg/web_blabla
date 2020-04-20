@@ -71,7 +71,7 @@ In a bash terminal, type::
   npm run intall_py
   # rename the project
   find . -iname "*web_blabla*"
-  grep web_blabla -r .
+  grep -i web_blabla -r .
   # initiate the git repo
   git init
   git add .

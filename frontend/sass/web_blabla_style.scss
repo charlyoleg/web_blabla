@@ -1,0 +1,116 @@
+/* web_blabla_style.scss */
+// a comment not visible in the css output
+
+// ============================
+// reset - base
+// ============================
+
+// html {
+:root {
+  text-align: left;
+  font-size: 16px;
+  font-family: Verdana, Geneva, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: normal;
+}
+
+body {
+  background-color: #e6e600;
+  scroll-behavior: smooth;
+}
+
+// ============================
+// main
+// ============================
+
+body main {
+  --nav-font-size: 2vh;
+  --nav-gap-height: calc(9*var(--nav-font-size));
+}
+
+// ============================
+// header
+// ============================
+
+header {
+  background-color: #e6e600;
+  text-align: center;
+}
+
+.head_title_img {
+  width: 70vw;
+}
+
+header h2 {
+  color: #b3b300;
+}
+
+
+// ============================
+// footer
+// ============================
+
+footer {
+  background-color: #cccc00;
+  padding-bottom: 200px;
+}
+
+footer h1 {
+  text-align: center;
+  color: #e6e600
+}
+
+footer h2 {
+  text-align: left;
+  color: #ffff80
+}
+
+.footer_columns {
+  column-count: 3;
+  column-width: 400px;
+  column-fill: balance;
+  column-gap: 5em;
+  column-rule-style: none;
+}
+
+.web_blabla_fingerprint p {
+  margin: 0;
+  margin-left: 3rem;
+  padding: 0.05rem;
+}
+
+
+// ============================
+// Nice numbered nested ordered-list
+// ============================
+
+.footer_columns ol {
+  counter-reset: footer_list;
+  padding-left: 1em;
+}
+
+.footer_columns li {
+  counter-increment: footer_list;
+  list-style-type: none;
+}
+
+.footer_columns li::before {
+  content: counters(footer_list, ".") ". ";
+}
+
+.footer_columns > ol {
+  font-weight: bold;
+}
+
+.footer_columns > ol ol {
+  font-weight: normal;
+}
+
+.footer_columns > ol ol::after {
+  content: "";
+  display: block;
+  height: 2em;
+}
+
+

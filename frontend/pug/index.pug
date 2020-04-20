@@ -1,0 +1,37 @@
+//- index.pug
+doctype html
+html(lang="fr")
+  head
+    meta(charset='utf-8')
+    title Web_blabla
+    meta(name='description', content='My boilerplate for web projects')
+    meta(name='author', content='charlyoleg')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', href='css/web_blabla_style.css?v=1.0')
+    link(rel='manifest', href='/manifest.json')
+    link(rel='icon', href='web_blabla_favicon.svg', type='image/svg+xml')
+  body
+    // web_blabla's header
+    header
+      h1
+        img.head_title_img(src='img/logo_web_blabla.svg', alt='web_blabla')
+      h2 My boilerplate for web projects
+    // web_blabla's main
+    main
+      p Voici et voilà
+    // Rouleau's footer
+    include web_blabla_footer.pug
+
+    // The core logic
+    script(type='module', src='js/web_blabla_app.js?v=1.0')
+    // The service-worker
+    if fingerprint.with_service_worker
+      script.
+        if ('serviceWorker' in navigator) {
+          console.info('Service Worker is supported in this browser, but not yet used');
+          //navigator.serviceWorker.register('./web_blabla_service_worker.js')
+          // .then(registration => console.log('web_blabla service worker installed with scope: ', registration.scope))
+          // .catch(err => console.error('Error by installing the web_blabla service worker: ', err));
+        } else {
+          console.info('Service Worker is not supported in this browser');
+        }
