@@ -35,7 +35,7 @@
     "lint_be": "eslint -c backend/eslint.json -p backend/tsconfig.json --fix",
     "test_be": "jest --verbose",
     "swag_be": "swagger-jsdoc -d backend/swaggerDef.js backend/src/web_blabla_app.ts -o backend/swagger.yaml",
-    "serve_be": "cd backend/dist && node web_blabla_app.js",
+    "serve_be": "node backend/dist/web_blabla_app.js",
     "start_be": "run-s clean_be build_be serve_be",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
