@@ -38,6 +38,8 @@
     "test_be": "jest --config=backend/jest.config.js backend",
     "swag_be": "swagger-jsdoc -d backend/swaggerDef.js backend/src/web_blabla_app.ts -o backend/swagger.yaml",
     "serve_be": "node backend/dist/web_blabla_app.js",
+    "serve_be_prod_http": " NODE_ENV='production' FORCE_HTTP=1  node backend/dist/web_blabla_app.js",
+    "serve_be_prod_https": "NODE_ENV='production'               node backend/dist/web_blabla_app.js",
     "start_be": "run-s clean_be build_be serve_be",
     "pre_start": "run-s clean_fe build_fe clean_be build_be serve_be",
     "start_browser": "sensible-browser https://localhost:8443",

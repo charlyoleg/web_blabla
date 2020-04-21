@@ -24,10 +24,10 @@ let default_certificate_filename = './server_dev.crt';
 
 if(process.env.NODE_ENV == "production"){
   console.log("Running in ENV production ...");
-  let default_app_http_port = 80;
-  let default_app_https_port = 443;
-  let default_key_filename = './server_prod.key';
-  let default_certificate_filename = './server_prod.crt';
+  default_app_http_port = 80;
+  default_app_https_port = 443;
+  default_key_filename = './server_prod.key';
+  default_certificate_filename = './server_prod.crt';
 } else {
   console.log("Running in ENV development ...");
 }

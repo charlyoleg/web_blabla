@@ -8,3 +8,5 @@ backend/dist/
 docs/build/
 swagger.yaml
 *.pdf
+server_prod.key
+server_prod.crt
