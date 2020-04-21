@@ -61,8 +61,10 @@ To restart all pm2 process after the server reboots::
 
   pm2 startup # and follow the instructions
 
-  systemctl list-units --type service --all
-  systemctl status pm2
+  systemctl list-units --type service --all | grep pm2
+  systemctl status pm2-bob
+  ps aux | grep pm2
+  pm2 ls
 
 
 On your development laptop, you don't need to install pm2_ globally. If you want to practice it, just install it locally::
