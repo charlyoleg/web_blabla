@@ -4,7 +4,7 @@ Notes on OVH-VPS deployment
 
 
 OVH Virtual Server
-=================
+==================
 
 OVH_ proposes price competitive *virtual server* called VPS_. It is a complete Ubuntu_ server, where you can install anything, inclusive nodejs_.
 
