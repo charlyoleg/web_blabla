@@ -12,6 +12,7 @@ Welcome to web_blabla's documentation!
 
    README
    notes_on_web_blabla
+   notes_on_ovh_vps_deployment
 
 
 
