@@ -78,3 +78,14 @@ On your development laptop, you don't need to install pm2_ globally. If you want
 .. _pm2: https://pm2.keymetrics.io/
 .. _systemd: https://www.freedesktop.org/wiki/Software/systemd/
 
+
+port access right
+-----------------
+
+On Ubuntu, non-root user can not use per default the port-number smaller than 1024. You can grant the privileges with::
+
+  sudo apt-get install libcap2-bin
+  which node
+  ls -l /usr/bin/node
+  sudo setcap cap_net_bind_service=+ep /usr/bin/node
+
