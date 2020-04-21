@@ -89,3 +89,26 @@ On Ubuntu, non-root user can not use per default the port-number smaller than 10
   ls -l /usr/bin/node
   sudo setcap cap_net_bind_service=+ep /usr/bin/node
 
+
+Starting the apps
+=================
+
+In the VPS-terminal::
+
+  NODE_ENV='production' FORCE_HTTP=1  pm2 start node backend/dist/web_blabla_app.js --name blablae
+  NODE_ENV='production'  pm2 start node backend/dist/web_blabla_app.js --name blablas
+  pm2 ls
+  pm2 save
+  pm2 logs blablae
+  pm2 logs blablas
+  sudo reboot
+  pm2 stop blablas
+  pm2 restart blablas
+  ps aux | grep pm2
+
+
+To update the *systemd* startup scripts::
+
+  pm2 unstartup
+  pm2 startup
+
