@@ -105,9 +105,6 @@ Frontend
 Backend
 -------
 
-- prod/dev keys and ports
-- https upgrade
-- pm2
-- VPS install
+- redirect http to https (Apache settings !?)
 
 
