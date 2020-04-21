@@ -1,8 +1,19 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # generate_keys.sh
 
 ## key basename
-BASENAME='web_blabla_server'
+if [ "$1" = "dev" ]; then
+  BASENAME='server_dev'
+elif [ "$1" = "prod" ]; then
+  BASENAME='server_prod'
+else
+  echo "ERR010: Error, one argument required: 'dev' or 'prod'"
+  exit 1
+fi
+
+echo "BASENAME: ${BASENAME}"
+
+## filenames
 KEY_FILENAME="${BASENAME}.key"
 CERT_FILENAME="${BASENAME}.crt"
 

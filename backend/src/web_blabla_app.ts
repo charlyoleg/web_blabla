@@ -17,13 +17,32 @@ import * as https from "https";
 // Initialization of the express-app
 // ####################################
 
-const ssl_options = {
-    key: fs.readFileSync( path.join(__dirname, './web_blabla_server.key') ),
-    cert: fs.readFileSync( path.join(__dirname, './web_blabla_server.crt') )
-};
+let default_app_http_port = 8442;
+let default_app_https_port = 8443;
+let default_key_filename = './server_dev.key';
+let default_certificate_filename = './server_dev.crt';
 
-//const app_http_port = 8442;
-const app_https_port = 8443;
+if(process.env.NODE_ENV == "production"){
+  console.log("Running in ENV production ...");
+  let default_app_http_port = 80;
+  let default_app_https_port = 443;
+  let default_key_filename = './server_prod.key';
+  let default_certificate_filename = './server_prod.crt';
+} else {
+  console.log("Running in ENV development ...");
+}
+
+const app_http_port = process.env.PORT_NUM || default_app_http_port;
+const app_https_port = process.env.PORT_NUM || default_app_https_port;
+const key_filename = process.env.KEY_FILE || default_key_filename;
+const certificate_filename = process.env.CERT_FILE || default_certificate_filename;
+
+console.log("Using files: " + key_filename + " and " + certificate_filename);
+
+const ssl_options = {
+    key: fs.readFileSync( path.join(__dirname, key_filename) ),
+    cert: fs.readFileSync( path.join(__dirname, certificate_filename) )
+};
 
 const frontend_dist_dir = path.join(__dirname, '../../frontend/dist/');
 
@@ -124,13 +143,15 @@ app.use('/', express.static(frontend_dist_dir));
 // main while loop
 // ####################################
 
-// ===> with http
-// app.listen(app_http_port, () => {
-//    console.log('app: listening at http port ' + app_http_port);
-// });
-
-// ===> with https
-https.createServer(ssl_options, app).listen(app_https_port, () => {
+if(process.env.FORCE_HTTP){
+  // ===> with http
+  app.listen(app_http_port, () => {
+    console.log('app: listening at http port ' + app_http_port);
+  });
+} else {
+  // ===> with https
+  https.createServer(ssl_options, app).listen(app_https_port, () => {
     console.log("app: listening at https port " + app_https_port);
   });
+}
 

@@ -92,3 +92,22 @@ You can check the node-package dependencies with::
   npm ls --dev --depth=0
 
 
+ToDo
+====
+
+Frontend
+--------
+
+- StimulusJS
+- JWT
+- CSS open/closed box
+
+Backend
+-------
+
+- prod/dev keys and ports
+- https upgrade
+- pm2
+- VPS install
+
+
