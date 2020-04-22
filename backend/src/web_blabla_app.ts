@@ -147,7 +147,7 @@ app.use('/', express.static(frontend_dist_dir));
 
 const http_app = express();
 
-http_app.get("*", function (req, res, next) {
+http_app.use(function (req, res, next) {
   const https_url = "https://" + req.hostname + ":" + app_https_port + req.originalUrl;
   //console.log("http redirects to : " + https_url);
   res.redirect(https_url);
