@@ -142,21 +142,32 @@ app.use('/', express.static(frontend_dist_dir));
 
 
 // ####################################
+// http-app just to redirect http to https
+// ####################################
+
+const http_app = express();
+
+http_app.get("*", function (req, res, next) {
+  const https_url = "https://" + req.hostname + ":" + app_https_port + req.originalUrl;
+  //console.log("http redirects to : " + https_url);
+  res.redirect(https_url);
+});
+
+
+// ####################################
 // main while loop
 // ####################################
 
 if(process.env.HTTP_ENABLE){
   // ===> with http
-  http.createServer(app).listen(app_http_port, () => {
-    console.log('app: listening at http port ' + app_http_port);
+  http.createServer(http_app).listen(app_http_port, () => {
+    console.log('http_app  : listening at http port ' + app_http_port + ' to redirect to https');
   });
 }
 
-if(! process.env.HTTPS_DISABLE){
-  // ===> with https
-  https.createServer(ssl_options, app).listen(app_https_port, () => {
-    console.log("app: listening at https port " + app_https_port);
-  });
-}
+// ===> with https
+https.createServer(ssl_options, app).listen(app_https_port, () => {
+  console.log("https_app : listening at https port " + app_https_port);
+});
 
 

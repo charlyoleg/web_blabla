@@ -102,9 +102,10 @@ Frontend
 - JWT
 - CSS open/closed box
 
+
 Backend
 -------
 
-- redirect http to https (Apache settings !?)
+- statistics on visited routes, visitor number, request time
 
 

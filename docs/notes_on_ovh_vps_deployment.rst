@@ -20,8 +20,7 @@ Web_blabla environment variables
 This boilerplate express_ application reads several environment variables:
 
 - NODE_ENV (it also influences express_ behavior)
-- HTTP_ENABLE
-- HTTPS_DISABLE
+- HTTP_ENABLE (http is only used for redirecting to https)
 - PORT_NUM
 - KEY_FILE
 - CERT_FILE
