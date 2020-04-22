@@ -20,7 +20,8 @@ Web_blabla environment variables
 This boilerplate express_ application reads several environment variables:
 
 - NODE_ENV (it also influences express_ behavior)
-- FORCE_HTTP
+- HTTP_ENABLE
+- HTTPS_DISABLE
 - PORT_NUM
 - KEY_FILE
 - CERT_FILE
@@ -95,15 +96,13 @@ Starting the apps
 
 In the VPS-terminal::
 
-  NODE_ENV='production' FORCE_HTTP=1  pm2 start node backend/dist/web_blabla_app.js --name blablae
-  NODE_ENV='production'  pm2 start node backend/dist/web_blabla_app.js --name blablas
+  NODE_ENV='production' HTTP_ENABLE=1  pm2 start node backend/dist/web_blabla_app.js --name blablae
   pm2 ls
   pm2 save
   pm2 logs blablae
-  pm2 logs blablas
   sudo reboot
-  pm2 stop blablas
-  pm2 restart blablas
+  pm2 stop blablae
+  pm2 restart blablae
   ps aux | grep pm2
 
 

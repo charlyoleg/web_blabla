@@ -5,11 +5,13 @@
 import * as appCore from "./web_blabla_core";
 
 // const express = require('express');
+// const http = require('http');
 // const https = require('https');
 // const fs = require('fs');
 import * as express from "express";
 import * as path from "path";
 import * as fs from "fs";
+import * as http from "http";
 import * as https from "https";
 
 
@@ -143,15 +145,18 @@ app.use('/', express.static(frontend_dist_dir));
 // main while loop
 // ####################################
 
-if(process.env.FORCE_HTTP){
+if(process.env.HTTP_ENABLE){
   // ===> with http
-  app.listen(app_http_port, () => {
+  http.createServer(app).listen(app_http_port, () => {
     console.log('app: listening at http port ' + app_http_port);
   });
-} else {
+}
+
+if(! process.env.HTTPS_DISABLE){
   // ===> with https
   https.createServer(ssl_options, app).listen(app_https_port, () => {
     console.log("app: listening at https port " + app_https_port);
   });
 }
+
 
