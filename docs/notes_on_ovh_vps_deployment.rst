@@ -110,3 +110,26 @@ To update the *systemd* startup scripts::
   pm2 unstartup
   pm2 startup
 
+
+Access log
+==========
+
+The *web_blabla* express_ app uses the middleware morgan_ to log the http-requests. The log-files are stored under *backend/log/* and can be analyzed with goaccess_ for example.
+
+.. _morgan: https://github.com/expressjs/morgan
+.. _goaccess: https://goaccess.io/
+
+
+Getting started with goaccess
+-----------------------------
+
+In a bash terminal::
+
+  sudo apt install goaccess
+  cd web_blabla
+  goaccess backend/log/access.log --log-format=COMBINED
+  goaccess backend/log/access.log --log-format=COMBINED -a -o web_blabla_access_report.html
+  sensible-browser web_blabla_access_report.html
+
+
+
