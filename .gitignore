@@ -5,6 +5,7 @@ node_modules
 .venv
 frontend/dist/
 backend/dist/
+backend/log/
 docs/build/
 swagger.yaml
 *.pdf

@@ -9,6 +9,8 @@ import * as appCore from "./web_blabla_core";
 // const https = require('https');
 // const fs = require('fs');
 import * as express from "express";
+import * as morgan from "morgan";
+import * as rfs from "rotating-file-stream";
 import * as path from "path";
 import * as fs from "fs";
 import * as http from "http";
@@ -53,6 +55,21 @@ const frontend_dist_dir = path.join(__dirname, '../../frontend/dist/');
 console.log('frontend_dist_dir: ' + frontend_dist_dir);
 
 const app = express();
+
+
+
+// ####################################
+// logger
+// ####################################
+
+// create a rotating write stream
+let accessLogStream = rfs.createStream('access.log', {
+  interval: '1d', // 1d: rotate daily
+  path: path.join(__dirname, '../log')
+});
+
+app.use(morgan('combined', { stream: accessLogStream }))
+
 
 
 // ####################################
