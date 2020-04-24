@@ -106,6 +106,6 @@ Frontend
 Backend
 -------
 
-- statistics on visited routes, visitor number, request time
+- certificate
 
 
