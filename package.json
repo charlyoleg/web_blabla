@@ -8,6 +8,8 @@
   },
   "scripts": {
     "install_py": "PIPENV_VENV_IN_PROJECT=1 pipenv install",
+    "install_ubuntu": "sudo apt install goaccess",
+    "install_prerequisite": "run-s install_py install_ubuntu",
     "clean_docs": "rm -fr docs/build docs/*.pdf",
     "build_docs": "pipenv run sphinx-build -b html docs/ docs/build/",
     "view_docs": "sensible-browser docs/build/index.html",
@@ -44,6 +46,9 @@
     "start_browser": "sensible-browser https://localhost:8443",
     "start_be_fe": "run-p serve_be start_browser",
     "start": "run-s build_all start_be_fe",
+    "accesslog_terminal": "goaccess backend/log/access.log --log-format=COMBINED",
+    "accesslog_html": "goaccess backend/log/*.log --log-format=COMBINED -a -o frontend/dist/accesslog_report.html",
+    "accesslog_cleanup": "rm -f frontend/dist/accesslog_report.html",
     "test": "run-s test_fe eslint_fe test_be eslint_be"
   },
   "repository": {
