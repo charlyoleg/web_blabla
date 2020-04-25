@@ -11,6 +11,7 @@ import * as appCore from "./web_blabla_core";
 import * as express from "express";
 import * as morgan from "morgan";
 import * as rfs from "rotating-file-stream";
+import * as basicAuth from "express-basic-auth";
 import * as path from "path";
 import * as fs from "fs";
 import * as http from "http";
@@ -69,6 +70,21 @@ let accessLogStream = rfs.createStream('access.log', {
 });
 
 app.use(morgan('combined', { stream: accessLogStream }))
+
+
+
+// ####################################
+// Basic authorization
+// ####################################
+
+app.use('/accesslog_report', basicAuth({
+  users:{
+    'toto': 'toto',
+    'tata': 'tata'
+  },
+  challenge: true,
+  realm: 'ipp46hLoPma',
+}));
 
 
 
