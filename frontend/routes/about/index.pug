@@ -14,11 +14,21 @@ html(lang="fr")
     // web_blabla's header
     header
       h1
-        img.head_title_img(src='img/logo_web_blabla.svg', alt='web_blabla')
+        img.head_title_img(src='/img/logo_web_blabla.svg', alt='web_blabla')
       h2 My boilerplate for web projects
+
     // web_blabla's main
     main
       p voila le About
+      p
+        | back to the
+        |
+        a(href='/') root
+      p
+        | Look at the access-log
+        |
+        a(href='/accesslog_report/') report
+
     // Rouleau's footer
     include ../../pug_includes/web_blabla_footer.pug
 
