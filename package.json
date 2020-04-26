@@ -24,11 +24,12 @@
     "dev_fejs": "tsc --watch --project frontend/ts",
     "eslint_fe": "eslint frontend/ts/**",
     "test_fe": "jest --config=frontend/jest.config.js frontend",
-    "build_favicon": "cpy frontend/favi/**/* frontend/dist/",
-    "build_img": "cpy frontend/img/**/* frontend/dist/img",
-    "build_fe": "    run-s build_html     build_css build_fejs build_favicon build_img",
-    "build_fe_dev": "run-s build_html_dev build_css build_fejs build_favicon build_img",
-    "dev_fe": "run-p -l dev_html dev_css dev_fejs build_favicon build_img serve_fe",
+    "cpy_favicon": "cpy frontend/favi/**/* frontend/dist/",
+    "cpy_img": "cpy frontend/img/**/* frontend/dist/img",
+    "cpy_libjs": "cpy frontend/libjs/*.js frontend/dist/lib/",
+    "build_fe": "    run-s build_html     build_css build_fejs cpy_favicon cpy_img cpy_libjs",
+    "build_fe_dev": "run-s build_html_dev build_css build_fejs cpy_favicon cpy_img cpy_libjs",
+    "dev_fe": "run-p -l dev_html dev_css dev_fejs cpy_favicon cpy_img cpy_libjs serve_fe",
     "serve_fe": "live-server frontend/dist",
     "start_fe": "run-s clean_fe build_fe serve_fe",
     "clean_be": "rm -fr backend/dist",
@@ -84,6 +85,7 @@
     "express": "^4.17.1",
     "express-basic-auth": "^1.2.0",
     "morgan": "^1.10.0",
-    "rotating-file-stream": "^2.0.2"
+    "rotating-file-stream": "^2.0.2",
+    "stimulus": "^1.1.1"
   }
 }

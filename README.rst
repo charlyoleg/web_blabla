@@ -100,7 +100,6 @@ Frontend
 
 - StimulusJS
 - JWT
-- CSS open/closed box
 
 
 Backend

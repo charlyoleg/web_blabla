@@ -10,6 +10,7 @@ html(lang="fr")
     link(rel='stylesheet', href='css/web_blabla_style.css?v=1.0')
     link(rel='manifest', href='/manifest.json')
     link(rel='icon', href='web_blabla_favicon.svg', type='image/svg+xml')
+    script(type="text/javascript" src="lib/stimulus.umd.js")
   body
     // web_blabla's header
     header
@@ -32,8 +33,19 @@ html(lang="fr")
         label.shutter_panel_button(for='local_shutter_checkbox_2')
         h1 Second section
         section.shutter_panel
-          h2 Some Stimulus controllers
-          p patati patata
+          section.island(data-controller="addmult")
+            h2 Some Stimulus controllers
+            p (a+b)*c
+            input(type='number' value='5' data-target='addmult.operanda')
+            p +
+            input(type='number' value='3' data-target="addmult.operandb")
+            p *
+            input(type='number' value='2' data-target="addmult.operandc")
+            p
+              button(type="button" data-action!="click->addmult#pressCalcul") Calcul
+            input(type='number' readonly=true data-target="addmult.result")
+
+
 
       section
         input.shutter_panel_checkbox#local_shutter_checkbox_3(type='checkbox' checked=false)
