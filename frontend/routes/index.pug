@@ -18,8 +18,32 @@ html(lang="fr")
       h2 My boilerplate for web projects
     // web_blabla's main
     main
-      p Voici et voilà
-      a(href='/about') about
+
+      section
+        input.shutter_panel_checkbox#local_shutter_checkbox_1(type='checkbox' checked=true)
+        label.shutter_panel_button(for='local_shutter_checkbox_1')
+        h1 Fist section
+        section.shutter_panel
+          h2 Voici et voilà
+          a(href='/about') about
+
+      section
+        input.shutter_panel_checkbox#local_shutter_checkbox_2(type='checkbox' checked=false)
+        label.shutter_panel_button(for='local_shutter_checkbox_2')
+        h1 Second section
+        section.shutter_panel
+          h2 Some Stimulus controllers
+          p patati patata
+
+      section
+        input.shutter_panel_checkbox#local_shutter_checkbox_3(type='checkbox' checked=false)
+        label.shutter_panel_button(for='local_shutter_checkbox_3')
+        h1 Third section
+        section.shutter_panel
+          h2 More Stimulus controllers
+          p oye oye
+
+
     // Rouleau's footer
     include ../pug_includes/web_blabla_footer.pug
 

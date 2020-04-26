@@ -21,15 +21,6 @@ body {
 }
 
 // ============================
-// main
-// ============================
-
-body main {
-  --nav-font-size: 2vh;
-  --nav-gap-height: calc(9*var(--nav-font-size));
-}
-
-// ============================
 // header
 // ============================
 
@@ -45,6 +36,69 @@ header {
 header h2 {
   color: #b3b300;
 }
+
+
+// ============================
+// main
+// ============================
+
+body main {
+  --nav-font-size: 2vh;
+  --nav-gap-height: calc(9*var(--nav-font-size));
+}
+
+body > main {
+  min-height: 80vh;
+}
+
+
+
+// ============================
+// shutter panel
+// ============================
+
+.shutter_panel_checkbox {
+  display: none;
+}
+
+.shutter_panel_button {
+  display: inline-block;
+  width: 2rem;
+  height: 1rem;
+  border-radius: 0.4rem;
+  background-color: #cc5bc0;
+  margin-left: 2rem;
+}
+
+main > section > h1 {
+  display: inline-block;
+  font-size: 2rem;
+  margin: 2rem;
+  margin-bottom: 0rem;
+}
+
+label.shutter_panel_button:hover {
+  box-shadow: 0 0 0.2em 0.2em hsl(65, 100%, 86%);
+}
+
+label.shutter_panel_button:active {
+  box-shadow: 0 0 0.5em 0.5em hsl(65, 100%, 86%);
+}
+
+section.shutter_panel {
+  padding: 1rem;   //background-color: #000011;
+  display: none;
+}
+
+.shutter_panel_checkbox:checked ~ label.shutter_panel_button {
+  background-color: #5dcc5b;
+}
+
+.shutter_panel_checkbox:checked ~ section.shutter_panel {
+  display: block;
+}
+
+
 
 
 // ============================
