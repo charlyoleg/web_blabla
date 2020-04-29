@@ -133,3 +133,19 @@ In a bash terminal::
 
 
 
+DNS Records
+===========
+
+Use the wildcard '*' to redirect all the non-registered subdomains to a server-IP.
+
+In a bash terminal, test the DNS registry::
+
+  host mydomain.ovh
+  host www.mydomain.ovh
+  host blabla.mydomain.ovh
+  host abc.mydomain.ovh
+  host abc.mydomain.ovh
+  host abc.mydomain.ovh
+  host abc.ddd.mydomain.ovh
+
+
