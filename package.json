@@ -42,7 +42,7 @@
     "swag_be": "swagger-jsdoc -d backend/swaggerDef.js backend/src/web_blabla_app.ts -o backend/swagger.yaml",
     "serve_be": "node backend/dist/web_blabla_app.js",
     "serve_be_prod_http": " NODE_ENV='production' HTTP_ENABLE=1 node backend/dist/web_blabla_app.js",
-    "serve_be_prod2": " NODE_ENV='production' PORT_NUM=8001 node backend/dist/web_blabla_app.js",
+    "serve_be_prod2": " NODE_ENV='production' PORT_NUM=8001 pm2 start node backend/dist/web_blabla_app.js --name 'blabla'",
     "start_be": "run-s clean_be build_be serve_be",
     "build_all": "run-s clean_fe build_fe clean_be build_be",
     "start_browser": "sensible-browser https://localhost:8443",
