@@ -181,6 +181,9 @@ app.use('/', express.static(frontend_dist_dir));
 const http_app = express();
 
 http_app.use(function (req, res, next) {
+  console.log('hostname: ' + req.hostname);
+  console.log('ip: ' + req.ip);
+  console.dir(req.subdomains);
   const https_url = "https://" + req.hostname + ":" + app_https_port + req.originalUrl;
   //console.log("http redirects to : " + https_url);
   res.redirect(https_url);
