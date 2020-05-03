@@ -47,6 +47,7 @@ html(lang="fr")
         label.shutter_panel_button(for='local_shutter_checkbox_2')
         h1 Second section
         section.shutter_panel
+
           section.island(data-controller="addmult")
             h2 Some Stimulus controllers
             p (a+b)*c
@@ -62,6 +63,21 @@ html(lang="fr")
             p.result3(data-target="addmult.result2")
             p.result2(data-target="addmult.result2")
 
+          // clone but independent component
+          section.island(data-controller="addmult")
+            h2 Some Stimulus controllers
+            p (a+b)*c
+            input(type='number' value='5' data-target='addmult.operanda')
+            p +
+            input(type='number' value='3' data-target="addmult.operandb" data-action!="change->addmult#pressCalcul")
+            p *
+            input(type='number' value='2' data-target="addmult.operandc" data-action!="change->addmult#pressCalcul")
+            p
+              button(type="button" data-action!="click->addmult#pressCalcul") Calcul
+            input(type='number' readonly=true data-target="addmult.result")
+            p.result2(data-target="addmult.result2")
+            p.result3(data-target="addmult.result2")
+            p.result2(data-target="addmult.result2")
 
 
       section
