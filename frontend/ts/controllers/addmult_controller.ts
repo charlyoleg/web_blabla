@@ -22,6 +22,7 @@ export default class extends Stimulus.Controller {
     this.resultTarget.value = res;
     this.result2Targets.forEach((item: HTMLParagraphElement, index: number) => {
       item.innerHTML = res.toString();
+      item.classList.toggle("bgpink", res%10==0 );
     });
   }
 
