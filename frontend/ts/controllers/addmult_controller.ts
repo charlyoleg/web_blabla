@@ -8,7 +8,7 @@ declare var Stimulus : any;
 
 export default class extends Stimulus.Controller {
 
-  static targets = [ "operanda", "operandb", "operandc", "result" ];
+  static targets = [ "operanda", "operandb", "operandc", "result", "result2" ];
 
   connect(){
     console.log('Hello from addmult_controller.ts');
@@ -20,6 +20,9 @@ export default class extends Stimulus.Controller {
     res += parseInt(this.operandbTarget.value);
     res *= parseInt(this.operandcTarget.value);
     this.resultTarget.value = res;
+    this.result2Targets.forEach((item: HTMLParagraphElement, index: number) => {
+      item.innerHTML = res.toString();
+    });
   }
 
 }
