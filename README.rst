@@ -102,14 +102,6 @@ ToDo
 Frontend
 --------
 
-- StimulusJS
-
-  - several targets
-  - clone controller with same name
-  - clone controller with different name
-  - classList
-  - react on input field change
-
 - JWT
 
 
