@@ -52,9 +52,9 @@ html(lang="fr")
             p (a+b)*c
             input(type='number' value='5' data-target='addmult.operanda')
             p +
-            input(type='number' value='3' data-target="addmult.operandb")
+            input(type='number' value='3' data-target="addmult.operandb" data-action!="change->addmult#pressCalcul")
             p *
-            input(type='number' value='2' data-target="addmult.operandc")
+            input(type='number' value='2' data-target="addmult.operandc" data-action!="change->addmult#pressCalcul")
             p
               button(type="button" data-action!="click->addmult#pressCalcul") Calcul
             input(type='number' readonly=true data-target="addmult.result")
