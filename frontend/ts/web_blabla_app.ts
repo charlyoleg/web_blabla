@@ -17,6 +17,7 @@ import addMulipli from './controllers/addmult_controller.js';
 
 const stimulus_app = Stimulus.Application.start();
 stimulus_app.register("addmult", addMulipli);
+stimulus_app.register("addimulti", addMulipli); // for the cloned and renamed component
 console.log("Stimulus is started");
 
 
